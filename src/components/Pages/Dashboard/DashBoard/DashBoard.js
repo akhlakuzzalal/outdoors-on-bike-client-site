@@ -3,25 +3,39 @@ import {
    Typography, Divider, List, ListItem, ListItemText, SvgIcon
 } from '@mui/material';
 import { Box } from '@mui/system';
-import React from 'react';
-import Pay from '../Pay/Pay'
-import MyOrders from '../MyOrders/MyOrders'
-import Review from '../Review/Review'
-import ManageAllOrders from '../ManageAllOrders/ManageAllOrders'
-import AddProduct from '../AddProduct/AddProdutc'
-import MakeAdmin from '../MakeAdmin/MakeAdmin'
-import ManageProducts from '../ManageProducts/ManageProducts'
+import React, { useEffect, useState } from 'react';
+import Pay from '../Pay/Pay';
+import MyOrders from '../MyOrders/MyOrders';
+import Review from '../Review/Review';
+import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
+import AddProduct from '../AddProduct/AddProdutc';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import ManageProducts from '../ManageProducts/ManageProducts';
+import useAuth from '../../../../hooks/useAuth'
 import { Link, useRouteMatch, Switch, Route } from 'react-router-dom';
 
 const DashBoard = () => {
    const { path, url } = useRouteMatch();
    const drawerWidth = 240;
    const container = window !== undefined ? () => document.body : undefined;
-   const [mobileOpen, setMobileOpen] = React.useState(false);
+   const [mobileOpen, setMobileOpen] = useState(false);
+   const [profile, setProfile] = useState({});
+   const { user } = useAuth()
 
    const handleDrawerToggle = () => {
       setMobileOpen(!mobileOpen);
    };
+
+
+   useEffect(() => {
+      fetch(`http://localhost:4000/users/${user?.email}`)
+         .then(res => res.json())
+         .then(data => {
+            setProfile(data)
+         })
+   }, [user]);
+
+   console.log(profile)
 
    const drawer = (
       <div>
@@ -51,26 +65,35 @@ const DashBoard = () => {
                   <ListItemText>Review</ListItemText>
                </ListItem>
             </Link>
-            <Link to={`${url}/manageallorders`} className='text-decoration-none text-dark'>
-               <ListItem button >
-                  <ListItemText>Manage All Orders</ListItemText>
-               </ListItem>
-            </Link>
-            <Link to={`${url}/addproducts`} className='text-decoration-none text-dark'>
-               <ListItem button >
-                  <ListItemText>Add A Product</ListItemText>
-               </ListItem>
-            </Link>
-            <Link to={`${url}/makeadmin`} className='text-decoration-none text-dark'>
-               <ListItem button >
-                  <ListItemText>Make An Admin</ListItemText>
-               </ListItem>
-            </Link>
-            <Link to={`${url}/manageallproducts`} className='text-decoration-none text-dark'>
-               <ListItem button >
-                  <ListItemText>Manage All Products</ListItemText>
-               </ListItem>
-            </Link>
+
+            {
+               profile?.role === "admin" && <div>
+                  <Divider />
+                  <Link to={`${url}/manageallorders`} className='text-decoration-none text-dark'>
+                     <ListItem button >
+                        <ListItemText>Manage All Orders</ListItemText>
+                     </ListItem>
+                  </Link>
+                  <Link to={`${url}/addproducts`} className='text-decoration-none text-dark'>
+                     <ListItem button >
+                        <ListItemText>Add A Product</ListItemText>
+                     </ListItem>
+                  </Link>
+                  <Link to={`${url}/makeadmin`} className='text-decoration-none text-dark'>
+                     <ListItem button >
+                        <ListItemText>Make An Admin</ListItemText>
+                     </ListItem>
+                  </Link>
+                  <Link to={`${url}/manageallproducts`} className='text-decoration-none text-dark'>
+                     <ListItem button >
+                        <ListItemText>Manage All Products</ListItemText>
+                     </ListItem>
+                  </Link>
+               </div>
+            }
+            <ListItem button className='bg-primary text-light' >
+               <ListItemText>Log Out</ListItemText>
+            </ListItem>
          </List>
 
       </div>

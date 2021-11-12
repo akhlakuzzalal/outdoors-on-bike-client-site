@@ -1,0 +1,14 @@
+.background{
+   background-image: url("../../../img/login-graphic-woman-using-app.png");
+}
+.bg-shadow{
+   background-color: rgba(160, 185, 192, 0.5);
+}
+.card-style{
+   box-shadow: 2px 2px 5px  rgb(60, 58, 61);
+   border-radius: 10%;
+   overflow: hidden;
+}
+.review-style{
+   box-shadow: 2px 2px 5px  rgb(60, 58, 61);
+}

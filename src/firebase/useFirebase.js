@@ -1,5 +1,9 @@
 import initFirebase from "./firebase.init";
-import { getAuth, onAuthStateChanged, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
+import {
+   getAuth, onAuthStateChanged, signInWithPopup,
+   GoogleAuthProvider, signOut, signInWithEmailAndPassword,
+   createUserWithEmailAndPassword
+} from "firebase/auth";
 import { useEffect, useState } from "react";
 
 
@@ -13,15 +17,40 @@ const useFirebase = () => {
 
    const SignInWithGoogle = () => {
       setLoading(true)
-      signInWithPopup(auth, provider)
-         .catch(error => console.log(error.message))
-         .finally(() => setLoading(false))
+      return signInWithPopup(auth, provider)
+
    };
+
+   const registerWithEmailPass = (email, password) => {
+      setLoading(true)
+      createUserWithEmailAndPassword(auth, email, password)
+         .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            console.log(user)
+         })
+         .catch((error) => {
+         })
+         .finally(() => setLoading(false));
+   }
+
+   const logInWithEmailPass = (email, password) => {
+      setLoading(true)
+      signInWithEmailAndPassword(auth, email, password)
+         .then((userCredential) => {
+            const user = userCredential.user;
+            console.log(user)
+         })
+         .catch((error) => {
+
+         })
+         .finally(() => setLoading(false));
+   }
 
    const logOut = () => {
       setLoading(true)
       signOut(auth)
-         .then(() => { setUser({}) })
+         .then(() => setUser({}))
          .catch(error => console.log(error.message))
          .finally(() => setLoading(false))
    };
@@ -30,7 +59,7 @@ const useFirebase = () => {
       setLoading(true)
       const unsubscribe = onAuthStateChanged(auth, (user) => {
          if (user) {
-            setUser(user)
+            setUser(user);
          }
          else {
             setUser({})
@@ -43,6 +72,8 @@ const useFirebase = () => {
    return {
       logOut,
       SignInWithGoogle,
+      logInWithEmailPass,
+      registerWithEmailPass,
       user,
       setUser,
       setLoading,

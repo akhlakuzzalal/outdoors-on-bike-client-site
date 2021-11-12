@@ -7,6 +7,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import DashBoard from './components/Pages/Dashboard/DashBoard/DashBoard';
 import LogIn from './components/Pages/LogIn/LogIn';
 import AuthProvider from './firebase/AuthProvider';
+import Register from './components/Pages/Register/Register';
+import PrivateRoute from './firebase/PrivateRoute';
 
 function App() {
   return (
@@ -24,11 +26,14 @@ function App() {
             <Route path='/allproducts'>
               <AllProducts></AllProducts>
             </Route>
-            <Route path='/dashBoard'>
+            <PrivateRoute path='/dashBoard'>
               <DashBoard></DashBoard>
-            </Route>
+            </PrivateRoute>
             <Route path='/login'>
               <LogIn></LogIn>
+            </Route>
+            <Route path='/register'>
+              <Register></Register>
             </Route>
           </Switch>
         </BrowserRouter>
