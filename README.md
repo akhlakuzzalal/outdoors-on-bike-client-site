@@ -1,6 +1,6 @@
 # Getting Started Outdoors On Bike
 
-This project is live on [Create React App](https://motor-bike-site.web.app/home).
+This project is live on [Outdoors on Bike](https://motor-bike-site.web.app/home).
 
 ## Available Services for Normal users
 
