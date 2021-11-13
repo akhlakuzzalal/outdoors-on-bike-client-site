@@ -39,11 +39,11 @@ const Product = ({ bike }) => {
             </Modal.Header>
             <Modal.Body>Do You want to Add This In Your Cart!</Modal.Body>
             <Modal.Footer>
-               <Button variant="secondary" onClick={handleClose}>
+               <Button className='bg-info' variant="secondary" onClick={handleClose}>
                   Close
                </Button>
                <Button variant="primary" onClick={() => handleAddCart(bike._id)}>
-                  <Link to='/purches'>Purches Now</Link>
+                  <Link className='btn btn-success' to='/purches'>Purches Now</Link>
                </Button>
             </Modal.Footer>
          </Modal>
