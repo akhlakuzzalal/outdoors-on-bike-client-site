@@ -36,15 +36,7 @@ const useFirebase = () => {
 
    const logInWithEmailPass = (email, password) => {
       setLoading(true)
-      signInWithEmailAndPassword(auth, email, password)
-         .then((userCredential) => {
-            const user = userCredential.user;
-            console.log(user)
-         })
-         .catch((error) => {
-
-         })
-         .finally(() => setLoading(false));
+      return signInWithEmailAndPassword(auth, email, password)
    }
 
    const logOut = () => {

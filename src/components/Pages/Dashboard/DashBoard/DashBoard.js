@@ -1,6 +1,6 @@
 import {
    AppBar, CssBaseline, Drawer, IconButton, Toolbar,
-   Typography, Divider, List, ListItem, ListItemText, SvgIcon
+   Typography, Divider, List, ListItem, ListItemText, SvgIcon, Button
 } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
@@ -20,7 +20,7 @@ const DashBoard = () => {
    const container = window !== undefined ? () => document.body : undefined;
    const [mobileOpen, setMobileOpen] = useState(false);
    const [profile, setProfile] = useState({});
-   const { user } = useAuth()
+   const { user, logOut } = useAuth()
 
    const handleDrawerToggle = () => {
       setMobileOpen(!mobileOpen);
@@ -35,7 +35,6 @@ const DashBoard = () => {
          })
    }, [user]);
 
-   console.log(profile)
 
    const drawer = (
       <div>
@@ -92,7 +91,9 @@ const DashBoard = () => {
                </div>
             }
             <ListItem button className='bg-primary text-light' >
-               <ListItemText>Log Out</ListItemText>
+               <ListItemText>
+                  <Button onClick={logOut} className='text-light'>LogOut</Button>
+               </ListItemText>
             </ListItem>
          </List>
 

@@ -9,6 +9,7 @@ import LogIn from './components/Pages/LogIn/LogIn';
 import AuthProvider from './firebase/AuthProvider';
 import Register from './components/Pages/Register/Register';
 import PrivateRoute from './firebase/PrivateRoute';
+import Purches from './components/Pages/Purches/Purches';
 
 function App() {
   return (
@@ -35,6 +36,9 @@ function App() {
             <Route path='/register'>
               <Register></Register>
             </Route>
+            <PrivateRoute path='/purches'>
+              <Purches></Purches>
+            </PrivateRoute>
           </Switch>
         </BrowserRouter>
       </AuthProvider>

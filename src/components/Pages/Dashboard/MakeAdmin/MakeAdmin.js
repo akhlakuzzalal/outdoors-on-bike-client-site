@@ -1,13 +1,11 @@
 import { TextField, Button, Grid, LinearProgress, Alert, AlertTitle } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useState } from 'react';
-import useAuth from '../../../../hooks/useAuth';
 
 const MakeAdmin = () => {
    const [admin, setadmin] = useState({});
    const [load, setLoad] = useState(false);
    const [added, setAdded] = useState(false);
-   const { user } = useAuth();
 
    const handleOnBlur = e => {
       const field = e.target.name;
@@ -18,6 +16,7 @@ const MakeAdmin = () => {
    };
    const handleSubmit = e => {
       e.preventDefault();
+      setLoad(true)
       fetch(`http://localhost:4000/users/${admin.email}`, {
          method: "PUT",
          headers: {
@@ -26,8 +25,14 @@ const MakeAdmin = () => {
          body: JSON.stringify(admin)
       })
          .then(res => res.json())
-         .then(data => console.log(data))
-   }
+         .then(data => {
+            console.log(data)
+            setAdded(true);
+            setLoad(false)
+         })
+   };
+   setTimeout(function () { setAdded(false) }, 3000);
+
    return (
       <div>
          <h2>Add An Admin</h2>
@@ -62,7 +67,7 @@ const MakeAdmin = () => {
                               severity="success"
                            >
                               <AlertTitle>Success</AlertTitle>
-                              This Bike is Successfully <strong>Added!</strong>
+                              This user is make admin Successfully
                            </Alert>
                         }
                      </Grid>

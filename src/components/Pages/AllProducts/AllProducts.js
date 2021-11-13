@@ -2,6 +2,7 @@ import { Grid } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
 import SingleBike from './SingleBike/SingleBike';
+import Footer from '../../Footer/Footer';
 
 const AllProducts = () => {
    const [bikes, setBIkes] = useState([]);
@@ -56,7 +57,7 @@ const AllProducts = () => {
                </Carousel>
             </Grid>
          </Grid>
-
+         <Footer></Footer>
       </div>
    );
 };

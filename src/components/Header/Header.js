@@ -33,7 +33,7 @@ const Header = () => {
       <div>
          <Navbar bg="primary" expand="lg">
             <Container fluid>
-               <Navbar.Brand href="">Navbar scroll</Navbar.Brand>
+               <Navbar.Brand className='text-light fs-3 fw-bold' href="">Outdoors On Bike</Navbar.Brand>
                <Navbar.Toggle aria-controls="navbarScroll" />
                <Navbar.Collapse id="navbarScroll">
                   <Nav

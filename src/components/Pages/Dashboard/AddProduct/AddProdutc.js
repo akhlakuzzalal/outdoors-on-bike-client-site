@@ -33,7 +33,6 @@ const AddProdutc = () => {
          })
       setLoad(true)
    };
-   console.log(load)
 
    if (bike) {
       setTimeout(() => setBike(false), 6000)

@@ -26,7 +26,14 @@ const LogIn = () => {
       }
       else {
          e.preventDefault();
-         logInWithEmailPass(loginData?.email, loginData?.password);
+         logInWithEmailPass(loginData?.email, loginData?.password)
+            .then((userCredential) => {
+               history.push(ridirect_url);
+            })
+            .catch((error) => {
+
+            })
+            .finally(() => setLoading(false));
       }
    }
 
