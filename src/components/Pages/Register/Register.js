@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Alert, AlertTitle, Button, LinearProgress, TextField } from '@mui/material';
 import { Link } from 'react-router-dom';
+import Footer from '../../Footer/Footer'
 import useAuth from '../../../hooks/useAuth';
 
 const Register = () => {
@@ -141,6 +142,7 @@ const Register = () => {
 
                </div>
          }
+         <Footer></Footer>
       </div>
    );
 };
