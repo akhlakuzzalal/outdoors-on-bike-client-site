@@ -18,7 +18,7 @@ const AddProdutc = () => {
 
    const handleSubmit = e => {
       e.preventDefault();
-      fetch('http://localhost:4000/bikes', {
+      fetch('https://outdoors-on-bike.herokuapp.com/bikes', {
          method: 'POST',
          headers: {
             "content-type": "application/json"

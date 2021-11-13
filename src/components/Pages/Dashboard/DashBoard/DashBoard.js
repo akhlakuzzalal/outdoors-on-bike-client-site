@@ -28,7 +28,7 @@ const DashBoard = () => {
 
 
    useEffect(() => {
-      fetch(`http://localhost:4000/users/${user?.email}`)
+      fetch(`https://outdoors-on-bike.herokuapp.com/users/${user?.email}`)
          .then(res => res.json())
          .then(data => {
             setProfile(data)

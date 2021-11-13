@@ -14,7 +14,7 @@ const MyOrders = () => {
 
    const email = user.email
    useEffect(() => {
-      fetch(`http://localhost:4000/orders/${email}`, {
+      fetch(`https://outdoors-on-bike.herokuapp.com/orders/${email}`, {
          method: 'POST'
       })
          .then(res => res.json())
@@ -30,7 +30,7 @@ const MyOrders = () => {
    }
 
    const handleDelete = (id) => {
-      fetch(`http://localhost:4000/orders/${id}`, {
+      fetch(`https://outdoors-on-bike.herokuapp.com/orders/${id}`, {
          method: 'DELETE'
       })
          .then(res => res.json())

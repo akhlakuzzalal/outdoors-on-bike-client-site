@@ -17,7 +17,7 @@ const Purches = () => {
 
    useEffect(() => {
       if (cart.length !== 0) {
-         fetch(`http://localhost:4000/bikes/${bikeId}`)
+         fetch(`https://outdoors-on-bike.herokuapp.com/bikes/${bikeId}`)
             .then(res => res.json())
             .then(data => {
                setBike(data);
@@ -30,7 +30,7 @@ const Purches = () => {
 
    const handelConfirm = () => {
       setLoad(true)
-      fetch('http://localhost:4000/orders', {
+      fetch('https://outdoors-on-bike.herokuapp.com/orders', {
          method: "POST",
          headers: {
             "content-type": "application/json"

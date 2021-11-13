@@ -10,7 +10,7 @@ const ManageProduct = ({ bike, setLoading }) => {
    const handleDelete = (id) => {
       setShow(false);
       setLoading(true)
-      fetch(`http://localhost:4000/bikes/${id}`, {
+      fetch(`https://outdoors-on-bike.herokuapp.com/bikes/${id}`, {
          method: 'DELETE'
       })
          .then(res => res.json())

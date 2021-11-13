@@ -17,7 +17,7 @@ const MakeAdmin = () => {
    const handleSubmit = e => {
       e.preventDefault();
       setLoad(true)
-      fetch(`http://localhost:4000/users/${admin.email}`, {
+      fetch(`https://outdoors-on-bike.herokuapp.com/users/${admin.email}`, {
          method: "PUT",
          headers: {
             "content-type": "application/json"
