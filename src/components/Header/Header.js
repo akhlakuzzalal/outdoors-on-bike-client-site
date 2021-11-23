@@ -13,7 +13,7 @@ const Header = () => {
    const open = Boolean(anchorEl);
    const [profile, setProfile] = useState({});
 
-   const url = `https://outdoors-on-bike.herokuapp.com/users/${user?.email}`
+   const url = `https://bike-website-server.herokuapp.com/users/${user?.email}`
    useEffect(() => {
       fetch(url)
          .then(res => res.json())

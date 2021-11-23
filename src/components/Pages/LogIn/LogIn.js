@@ -48,7 +48,7 @@ const LogIn = () => {
             .then(result => {
                const newUser = result.user;
                const newData = { email: newUser.email, name: newUser.displayName, img: newUser.photoURL };
-               fetch('https://outdoors-on-bike.herokuapp.com/users', {
+               fetch('https://bike-website-server.herokuapp.com/users', {
                   method: "PUT",
                   headers: {
                      "content-type": "application/json"

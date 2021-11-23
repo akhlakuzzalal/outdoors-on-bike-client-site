@@ -59,7 +59,7 @@ const CheckoutForm = ({ _id, price }) => {
             return_url: "/",
          },
       },
-         fetch(`https://outdoors-on-bike.herokuapp.com/payment/${_id}`, {
+         fetch(`https://bike-website-server.herokuapp.com/payment/${_id}`, {
             method: "PUT",
             headers: {
                "content-type": "application/json"

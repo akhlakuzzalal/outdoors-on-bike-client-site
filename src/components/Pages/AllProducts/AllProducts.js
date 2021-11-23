@@ -8,7 +8,7 @@ import Header from '../../Header/Header';
 const AllProducts = () => {
    const [bikes, setBIkes] = useState([]);
    useEffect(() => {
-      fetch('https://outdoors-on-bike.herokuapp.com/bikes')
+      fetch('https://bike-website-server.herokuapp.com/bikes')
          .then(res => res.json())
          .then(data => setBIkes(data))
    }, [])

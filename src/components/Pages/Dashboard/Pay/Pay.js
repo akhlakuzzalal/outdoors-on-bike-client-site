@@ -6,7 +6,7 @@ const Pay = () => {
    const { id } = useParams();
    const [order, setOrders] = useState({});
    useEffect(() => {
-      fetch(`https://outdoors-on-bike.herokuapp.com/orders/${id}`)
+      fetch(`https://bike-website-server.herokuapp.com/orders/${id}`)
          .then(res => res.json())
          .then(data => setOrders(data[0]))
    }, [id])

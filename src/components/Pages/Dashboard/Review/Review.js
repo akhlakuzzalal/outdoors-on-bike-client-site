@@ -10,7 +10,7 @@ const Review = () => {
    const { user } = useAuth()
 
    useEffect(() => {
-      fetch(`https://outdoors-on-bike.herokuapp.com/users/${user?.email}`)
+      fetch(`https://bike-website-server.herokuapp.com/users/${user?.email}`)
          .then(res => res.json())
          .then(data => {
             setProfile(data)
@@ -25,7 +25,7 @@ const Review = () => {
    const handleSubmit = () => {
       setLoading(true);
       const newReview = { name: profile.name, rate: rate, img: profile.img, text: rateText }
-      fetch('https://outdoors-on-bike.herokuapp.com/reviews', {
+      fetch('https://bike-website-server.herokuapp.com/reviews', {
          method: "POST",
          headers: {
             "content-type": "application/json"

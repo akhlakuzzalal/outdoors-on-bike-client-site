@@ -6,7 +6,7 @@ const ManageAllOrders = () => {
    const [orders, setOrders] = useState([]);
    const [loading, setLoading] = useState(false);
    useEffect(() => {
-      fetch('https://outdoors-on-bike.herokuapp.com/orders')
+      fetch('https://bike-website-server.herokuapp.com/orders')
          .then(res => res.json())
          .then(data => setOrders(data))
    }, [loading]);
@@ -14,7 +14,7 @@ const ManageAllOrders = () => {
    const handleAction = (id, stutus) => {
       setLoading(true);
       const update = { stutus }
-      fetch(`https://outdoors-on-bike.herokuapp.com/orders/${id}`, {
+      fetch(`https://bike-website-server.herokuapp.com/orders/${id}`, {
          method: 'PUT',
          headers: {
             "content-type": "application/json"
