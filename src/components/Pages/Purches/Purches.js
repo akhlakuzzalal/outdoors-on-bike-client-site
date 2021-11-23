@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import useCart from '../../../hooks/useCart';
+import Header from '../../Header/Header';
+import Footer from '../../Footer/Footer';
 
 const Purches = () => {
    const { user } = useAuth();
@@ -26,7 +28,7 @@ const Purches = () => {
    }, []);
 
 
-   const order = { user: user.email, name: bike.bikeName, img: bike.img, stutus: 'pending' }
+   const order = { user: user.email, price: bike.price, name: bike.bikeName, img: bike.img, stutus: 'pending' }
 
    const handelConfirm = () => {
       setLoad(true)
@@ -47,6 +49,7 @@ const Purches = () => {
    }
    return (
       <div>
+         <Header></Header>
          <h2 className='bg-info py-2'>Confirm Your Order</h2>
          {
             bike?.img ?
@@ -84,6 +87,7 @@ const Purches = () => {
                   <Link to='/home' className='text-decoration-none btn btn-info text-light'>Go To The Home Page</Link>
                </div>
          }
+         <Footer></Footer>
       </div >
    );
 };

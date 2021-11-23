@@ -2,6 +2,7 @@ import { Alert, AlertTitle, Button, LinearProgress, TextField } from '@mui/mater
 import React, { useState } from 'react';
 import './login.css';
 import Footer from '../../Footer/Footer'
+import Header from '../../Header/Header'
 import useAuth from '../../../hooks/useAuth'
 import { Link, useLocation, useHistory } from 'react-router-dom';
 
@@ -69,6 +70,7 @@ const LogIn = () => {
 
    return (
       <div>
+         <Header></Header>
          <div className='py-5 background'>
             <div className='p-4 bg-shadow w-50 mx-auto' >
                {

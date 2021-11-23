@@ -57,19 +57,20 @@ const ManageAllOrders = () => {
                               <TableCell align="right">{row.stutus}</TableCell>
                         }
                         <TableCell align="right">
-                           <DropdownButton>
-                              <ButtonGroup
-                                 className='bg-info'
-                                 id={`dropdown-button-drop`}
-                                 size="sm"
-                                 variant="secondary"
-                                 title="Drop small"
-                              >
-                                 <Dropdown.Item onClick={() => handleAction(row._id, 'Approved')} eventKey="1">Approve</Dropdown.Item>
-                                 <Dropdown.Item onClick={() => handleAction(row._id, 'Declined')} eventKey="2">Declined</Dropdown.Item>
-                                 {/* <Dropdown.Item onClick={() => handleAction(row._id, '')} eventKey="3">Reject</Dropdown.Item> */}
-                              </ButtonGroup>
-                           </DropdownButton>
+                           {
+                              !row.payment && <DropdownButton>
+                                 <ButtonGroup
+                                    className='bg-info'
+                                    id={`dropdown-button-drop`}
+                                    size="sm"
+                                    variant="secondary"
+                                    title="Drop small"
+                                 >
+                                    <Dropdown.Item onClick={() => handleAction(row._id, 'Approved')} eventKey="1">Approve</Dropdown.Item>
+                                    <Dropdown.Item onClick={() => handleAction(row._id, 'Declined')} eventKey="2">Declined</Dropdown.Item>
+                                 </ButtonGroup>
+                              </DropdownButton>
+                           }
                         </TableCell>
                      </TableRow>
                   ))}

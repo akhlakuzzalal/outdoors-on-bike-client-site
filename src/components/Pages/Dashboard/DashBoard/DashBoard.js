@@ -49,7 +49,7 @@ const DashBoard = () => {
                   <ListItemText>Home</ListItemText>
                </ListItem>
             </Link>
-            <Link to={`${url}/pay`} className='text-decoration-none text-dark'>
+            <Link to='dashboard/pay' className='text-decoration-none text-dark'>
                <ListItem button >
                   <ListItemText>Pay</ListItemText>
                </ListItem>
@@ -162,7 +162,7 @@ const DashBoard = () => {
             <Toolbar />
             <Typography paragraph>
                <Switch>
-                  <Route path={`${path}/pay`}>
+                  <Route path={`${path}/pay/:id`}>
                      <Pay></Pay>
                   </Route>
                   <Route exact path={`${path}/`}>

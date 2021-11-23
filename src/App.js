@@ -1,7 +1,5 @@
 import './App.css';
 import Home from './components/Pages/Home/Home/Home';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
 import AllProducts from './components/Pages/AllProducts/AllProducts';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import DashBoard from './components/Pages/Dashboard/DashBoard/DashBoard';
@@ -16,7 +14,6 @@ function App() {
     <div className="App">
       <AuthProvider>
         <BrowserRouter>
-          <Header></Header>
           <Switch>
             <Route exact path='/'>
               <Home></Home>

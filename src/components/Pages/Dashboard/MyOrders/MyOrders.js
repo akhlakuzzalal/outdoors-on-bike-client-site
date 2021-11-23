@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import useAuth from '../../../../hooks/useAuth';
 import { Paper, Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, LinearProgress } from '@mui/material';
 import { Modal } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
 const MyOrders = () => {
@@ -72,9 +73,34 @@ const MyOrders = () => {
                                  <img width='120px' height='80px' src={row.img} alt='' />
                               </TableCell>
                               <TableCell align="right">{row.user}</TableCell>
-                              <TableCell align="right">{row.stutus}</TableCell>
+                              <TableCell className={row.stutus === "Approved" ? 'text-success' : 'text-danger'} align="right">{row.stutus}</TableCell>
                               <TableCell align="right">
-                                 <Button onClick={() => setShow(true)} className='bg-danger' variant='contained'>Delete</Button>
+                                 {
+                                    row.stutus === "Approved" ?
+                                       <>
+                                          {
+                                             row.payment ?
+                                                <>
+                                                   <button className='btn btn-info' disabled>Paid</button>
+                                                   <button className='btn btn-warning'>Track Order</button>
+                                                </>
+                                                :
+                                                <Link className='btn btn-info' to={`/dashboard/pay/${row._id}`}>Pay Now</Link>
+                                          }
+                                       </>
+                                       :
+                                       <>
+                                          {
+                                             row.stutus === "Declined" ?
+                                                <Button onClick={() => setShow(true)} className='bg-danger' variant='contained'>Delete</Button>
+                                                :
+                                                <>
+                                                   <p className='text-danger'>Waiting for approval</p>
+                                                   <Button onClick={() => setShow(true)} className='bg-danger' variant='contained'>Remove It??</Button>
+                                                </>
+                                          }
+                                       </>
+                                 }
                               </TableCell>
                               <Modal className='mt-5' show={show} onHide={handleClose} animation={false}>
                                  <Modal.Header closeButton>

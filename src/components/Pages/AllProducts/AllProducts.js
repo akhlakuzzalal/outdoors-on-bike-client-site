@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
 import SingleBike from './SingleBike/SingleBike';
 import Footer from '../../Footer/Footer';
+import Header from '../../Header/Header';
 
 const AllProducts = () => {
    const [bikes, setBIkes] = useState([]);
@@ -13,6 +14,7 @@ const AllProducts = () => {
    }, [])
    return (
       <div>
+         <Header></Header>
          <h2 className='review-style py-2 bg-info text-light'>All Bikes</h2>
          <Grid container spacing={2}>
             <Grid item xs={12} md={9}>
