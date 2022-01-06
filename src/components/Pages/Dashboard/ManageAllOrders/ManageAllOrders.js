@@ -64,7 +64,6 @@ const ManageAllOrders = () => {
                                     id={`dropdown-button-drop`}
                                     size="sm"
                                     variant="secondary"
-                                    title="Drop small"
                                  >
                                     <Dropdown.Item onClick={() => handleAction(row._id, 'Approved')} eventKey="1">Approve</Dropdown.Item>
                                     <Dropdown.Item onClick={() => handleAction(row._id, 'Declined')} eventKey="2">Declined</Dropdown.Item>

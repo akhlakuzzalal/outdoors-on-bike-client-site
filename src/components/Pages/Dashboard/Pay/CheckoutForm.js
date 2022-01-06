@@ -56,7 +56,7 @@ const CheckoutForm = ({ _id, price }) => {
          elements,
          confirmParams: {
             // Make sure to change this to your payment completion page
-            return_url: "/",
+            return_url: "http://localhost:3000/dashBoard",
          },
       },
          fetch(`https://bike-website-server.herokuapp.com/payment/${_id}`, {

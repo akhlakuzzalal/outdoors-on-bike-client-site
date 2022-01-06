@@ -3,7 +3,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import './payment.css';
 
-import CheckoutForm from "./CheakoutForm";
+import CheckoutForm from "./CheckoutForm";
 import { CircularProgress } from "@mui/material";
 
 // Make sure to call loadStripe outside of a component’s render to avoid
