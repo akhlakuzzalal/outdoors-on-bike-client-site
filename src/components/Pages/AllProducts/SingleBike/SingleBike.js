@@ -21,14 +21,14 @@ const SingleBike = ({ bike }) => {
                <img height='200px' width='300px' src={img} alt="" />
             </div>
             <div>
-               <h3>{bikeName}</h3>
-               <h5>Bike Price: {price}</h5>
-               <Button onClick={() => setShow(true)} variant='contained'>Purches</Button>
+               <h3 style={{ color: '#f57f17' }}>{bikeName}</h3>
+               <h5>Bike Price: <span className='fw-bold'>{price}</span></h5>
+               <Button onClick={() => setShow(true)} style={{ backgroundColor: '#f57f17' }} variant='contained'>Purchase</Button>
             </div>
          </div>
          <Modal show={show} onHide={handleClose} animation={false}>
             <Modal.Header closeButton>
-               <Modal.Title className='text-success'>{bikeName}</Modal.Title>
+               <Modal.Title style={{ color: '#f57f17' }}>{bikeName}</Modal.Title>
             </Modal.Header>
             <Modal.Body>Do You want to Add This In Your Cart!</Modal.Body>
             <Modal.Footer>
@@ -36,7 +36,7 @@ const SingleBike = ({ bike }) => {
                   Close
                </Button>
                <Button onClick={() => handleAddCart(bike._id)}>
-                  <Link className='btn btn-success' to='/purches'>Purches Now</Link>
+                  <Link style={{ backgroundColor: '#f57f17' }} className='btn text-light' to='/purches'>Purchase Now</Link>
                </Button>
             </Modal.Footer>
          </Modal>

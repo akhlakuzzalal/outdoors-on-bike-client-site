@@ -4,11 +4,20 @@
 .bg-shadow{
    background-color: rgba(160, 185, 192, 0.5);
 }
-.card-style{
-   box-shadow: 2px 2px 5px  rgb(60, 58, 61);
-   border-radius: 10%;
+.card-style {
+   box-shadow: 0 0 14px rgb(63 63 63 / 37%);
+   border-radius: 8px;
    overflow: hidden;
 }
 .review-style{
    box-shadow: 2px 2px 5px  rgb(60, 58, 61);
+}
+.btn-clr{
+   background-color: #f57f1770;
+}
+.single{
+transition: .6s;
+}
+.single:hover{
+   background-color: #f57f1738;
 }

@@ -50,7 +50,7 @@ const Purches = () => {
    return (
       <div>
          <Header></Header>
-         <h2 className='bg-info py-2'>Confirm Your Order</h2>
+         <h2 style={{ color: '#f57f17' }} className='py-2'>Confirm Your Order</h2>
          {
             bike?.img ?
                <div className='mt-4'>
@@ -64,18 +64,18 @@ const Purches = () => {
                                  <div>
                                     <h3 className='bg-success text-light w-75 p-4 mx-auto'>Order send Successfully</h3>
                                     <div className='my-5 py-5'>
-                                       <Link to='/home' className='text-decoration-none btn btn-info text-light'>Go To The Home Page</Link>
+                                       <Link to='/home' style={{ backgroundColor: '#f57f17' }} className='text-decoration-none btn text-light'>Go To The Home Page</Link>
                                     </div>
                                  </div>
                                  :
-                                 <Grid className='review-style w-50 mx-auto align-items-center' container>
+                                 <Grid className='card-style px-3 w-50 mx-auto align-items-center' container>
                                     <Grid sx={{ width: { md: '500px', xs: '200px' } }} item xs={12} md={8}>
                                        <img className='img-fluid' src={bike?.img} alt="" />
                                     </Grid>
                                     <Grid className='pb-2 mx-auto' item xm={12} md={4}>
-                                       <h3 className='text-info'>{bike?.bikeName}</h3>
+                                       <h3 className='text-dark fw-bold'>{bike?.bikeName}</h3>
                                        <h4>Price: <span className='fw-bold text-success'>{bike.price}</span></h4>
-                                       <Button onClick={handelConfirm} variant='contained'>Confirm Order</Button>
+                                       <Button style={{ backgroundColor: '#f57f17' }} onClick={handelConfirm} variant='contained'>Confirm Order</Button>
                                     </Grid>
                                  </Grid>
                            }

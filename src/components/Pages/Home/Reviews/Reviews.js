@@ -10,9 +10,9 @@ const Reviews = () => {
          .then(data => setReviews(data))
    }, [])
    return (
-      <div>
-         <h2 className='review-style py-2 bg-info'>Users Review</h2>
-         <div style={{ minHeight: "100px" }} className='row row-cols-1 row-cols-lg-3 row-cols-md-2 g-4'>
+      <div className='container'>
+         <h2 style={{ color: '#f57f17', padding: '80px 0' }} className='pb-2 pt-4 fs-2 fw-bold mt-4'>Users Review</h2>
+         <div style={{ minHeight: "100px" }} className='row gx-5 row-cols-lg-3 mb-4'>
             {
                reviews.map(review => <ReviewHome key={review._id} review={review}></ReviewHome>)
             }

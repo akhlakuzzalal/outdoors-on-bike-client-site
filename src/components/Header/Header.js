@@ -6,6 +6,7 @@ import { Logout } from '@mui/icons-material';
 import { Container, Form, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import bikeLogo from '../../img/20220113_124217__01.png'
 
 const Header = () => {
    const { user, logOut } = useAuth();
@@ -31,28 +32,40 @@ const Header = () => {
 
    return (
       <div>
-         <Navbar bg="primary" expand="lg">
-            <Container fluid>
-               <Navbar.Brand className='text-light fs-3 fw-bold lh-1' href="">Outdoors On Bike</Navbar.Brand>
+         <Navbar expand="lg">
+            <Container>
+               <Navbar.Brand className='text-dark fs-3 fw-bold lh-1' href=""><Link to='/home' className='text-decoration-none text-dark'> <img width={'120px'} height={'60px'} src={bikeLogo} alt="" /></Link></Navbar.Brand>
                <Navbar.Toggle aria-controls="navbarScroll" />
-               <Navbar.Collapse id="navbarScroll">
-                  <Nav
-                     className="me-auto my-2 my-lg-0"
-                     style={{ maxHeight: '100px' }}
-                     navbarScroll
-                  >
-                     <Nav.Link as={Link} to="/home">Home</Nav.Link>
-                     <Nav.Link as={Link} to="/allproducts">Products</Nav.Link>
-                     <Nav.Link as={Link} to="/dashBoard">Dashboard</Nav.Link>
-                  </Nav>
-                  <Form className="d-flex">
+               <Navbar.Collapse id="navbarScroll" className='justify-content-end'>
+                  <></>
+                  <Form className="d-flex align-items-center">
                      {
                         user?.email ?
-                           <IconButton onClick={handleClick} size="small" sx={{ ml: 2 }}>
-                              <Avatar sx={{ width: 32, height: 32 }}> <img className='img-fluid' src={profile?.img} alt="" /> </Avatar>
-                           </IconButton>
+                           <>
+                              <Nav
+                                 className="me-auto my-2 my-lg-0"
+                                 style={{ maxHeight: '100px' }}
+                                 navbarScroll
+                              >
+                                 <Nav.Link as={Link} to="/home">Home</Nav.Link>
+                                 <Nav.Link as={Link} to="/allproducts">Products</Nav.Link>
+                                 <Nav.Link as={Link} to="/dashBoard">Dashboard</Nav.Link>
+                              </Nav>
+                              <IconButton onClick={handleClick} size="small" sx={{ ml: 2 }}>
+                                 <Avatar sx={{ width: 32, height: 32 }}> <img className='img-fluid' src={profile?.img} alt="" /> </Avatar>
+                              </IconButton></>
                            :
-                           <Link to='/login'><Button className='text-light'>Login</Button></Link>
+                           <>
+                              <Nav
+                                 className="me-auto my-2 my-lg-0"
+                                 style={{ maxHeight: '100px' }}
+                                 navbarScroll
+                              >
+                                 <Nav.Link as={Link} to="/home">Home</Nav.Link>
+                                 <Nav.Link as={Link} to="/allproducts">Products</Nav.Link>
+                              </Nav>
+                              <Link className='text-decoration-none text-dark' to='/login'>Login</Link>
+                           </>
                      }
                   </Form>
                </Navbar.Collapse>
