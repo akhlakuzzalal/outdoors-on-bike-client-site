@@ -28,8 +28,8 @@ const ManageAllOrders = () => {
 
    }
    return (
-      <div className='mx-auto review-style'>
-         <h2 className='bg-info'>Manage All Orders</h2>
+      <div className='mx-auto review-style down-menu'>
+         <h2 style={{ color: '#f57f17' }} className='py-3'>Manage All Orders</h2>
          <TableContainer className='review-style mx-auto' sx={{ width: { md: '80%', xs: '450px' } }} component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
                <TableHead>
@@ -60,7 +60,7 @@ const ManageAllOrders = () => {
                            {
                               !row.payment && <DropdownButton>
                                  <ButtonGroup
-                                    className='bg-info'
+                                    style={{ backgroundColor: '#f57f17' }}
                                     id={`dropdown-button-drop`}
                                     size="sm"
                                     variant="secondary"

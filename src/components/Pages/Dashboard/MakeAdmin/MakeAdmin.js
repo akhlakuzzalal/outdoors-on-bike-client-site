@@ -48,7 +48,7 @@ const MakeAdmin = () => {
                         <form onSubmit={handleSubmit}>
                            <TextField
                               onBlur={handleOnBlur}
-                              sx={{ width: '50%', m: 1 }}
+                              sx={{ width: '75%', m: 1 }}
                               id='satandard-basic'
                               name='email'
                               label="Email Address"
@@ -56,7 +56,7 @@ const MakeAdmin = () => {
                               variant="standard" />
 
                            <Button
-                              sx={{ width: '50%', m: 1 }}
+                              sx={{ width: '75%', m: 1, backgroundColor: '#f57f17' }}
                               variant='contained'
                               type='submit'
                            >Make Admin</Button>

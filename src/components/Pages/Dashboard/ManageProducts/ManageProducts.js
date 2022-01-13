@@ -20,7 +20,7 @@ const ManageProducts = () => {
 
                :
                <div>
-                  <h2 className='bg-info py-2 text-light'>Manage All Products</h2>
+                  <h2 style={{ color: '#f57f17' }} className='py-2'>Manage All Products</h2>
                   {
                      bikes.map(bike => <ManageProduct key={bike._id} bike={bike} setLoading={setLoading}></ManageProduct>)
                   }

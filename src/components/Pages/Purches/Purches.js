@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import useCart from '../../../hooks/useCart';
-import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';
 
 const Purches = () => {
@@ -25,7 +24,7 @@ const Purches = () => {
                setBike(data);
             })
       }
-   }, []);
+   }, [bikeId]);
 
 
    const order = { user: user.email, price: bike.price, name: bike.bikeName, img: bike.img, stutus: 'pending' }
@@ -49,7 +48,6 @@ const Purches = () => {
    }
    return (
       <div>
-         <Header></Header>
          <h2 style={{ color: '#f57f17' }} className='py-2'>Confirm Your Order</h2>
          {
             bike?.img ?

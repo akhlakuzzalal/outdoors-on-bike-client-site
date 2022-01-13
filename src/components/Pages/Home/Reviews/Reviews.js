@@ -12,7 +12,7 @@ const Reviews = () => {
    return (
       <div className='container'>
          <h2 style={{ color: '#f57f17', padding: '80px 0' }} className='pb-2 pt-4 fs-2 fw-bold mt-4'>Users Review</h2>
-         <div style={{ minHeight: "100px" }} className='row gx-5 row-cols-lg-3 mb-4'>
+         <div className='row mb-4'>
             {
                reviews.map(review => <ReviewHome key={review._id} review={review}></ReviewHome>)
             }

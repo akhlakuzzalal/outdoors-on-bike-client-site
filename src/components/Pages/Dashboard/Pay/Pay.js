@@ -12,8 +12,8 @@ const Pay = () => {
    }, [id])
    return (
       <div>
-         <h3>Payment for Name id:{order?.name}</h3>
-         <h2>Pay TK : {order?.price}</h2>
+         <h2 style={{ color: '#f57f17' }}>{order?.name}</h2>
+         <h3>Payable amount $<span className='fw-bold' style={{ color: '#5469d4' }}>{order?.price}</span></h3>
          <Payment order={order}></Payment>
       </div>
    );

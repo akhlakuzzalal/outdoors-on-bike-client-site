@@ -2,16 +2,15 @@ import { Alert, AlertTitle, Button, LinearProgress, TextField } from '@mui/mater
 import React, { useState } from 'react';
 import './login.css';
 import Footer from '../../Footer/Footer'
-import Header from '../../Header/Header'
 import useAuth from '../../../hooks/useAuth'
-import { Link, useLocation, useHistory } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const LogIn = () => {
    const { SignInWithGoogle, logInWithEmailPass, setLoading, loading, user } = useAuth();
    const [loginData, setLoginData] = useState({});
    const location = useLocation();
-   const history = useHistory();
-   const ridirect_url = location.state?.from
+   const nevigate = useNavigate();
+   const ridirect_url = location.state?.from?.pathname || "/";
 
 
    const handleOnBlur = e => {
@@ -30,7 +29,7 @@ const LogIn = () => {
          e.preventDefault();
          logInWithEmailPass(loginData?.email, loginData?.password)
             .then((userCredential) => {
-               history.push(ridirect_url);
+               nevigate(ridirect_url);
             })
             .catch((error) => {
 
@@ -57,7 +56,7 @@ const LogIn = () => {
                })
                   .then(res => res.json())
                   .then(data => {
-                     history.push(ridirect_url);
+                     nevigate(ridirect_url);
                   })
             })
             .catch(error => console.log(error.message))
@@ -70,9 +69,9 @@ const LogIn = () => {
 
    return (
       <div>
-         <Header></Header>
-         <div className='py-5 background'>
-            <div className='p-4 bg-shadow w-50 mx-auto' >
+         <div className='py-5 input-style'>
+            <div className='p-4 w-50 mx-auto card-style' >
+               <h2 style={{ color: '#f57f17' }} className='py-3'>LogIn</h2>
                {
                   loading ?
                      <LinearProgress sx={{ width: '75%', mx: 'auto' }} />
@@ -80,7 +79,7 @@ const LogIn = () => {
                      <form onSubmit={handleSubmit}>
                         <TextField
                            onBlur={handleOnBlur}
-                           sx={{ width: 1, mx: 'auto' }}
+                           sx={{ width: 1, mx: 'auto', marginBottom: '18px' }}
                            id='filled-basic'
                            name='email'
                            label="Email Address"
@@ -88,7 +87,7 @@ const LogIn = () => {
                            variant="filled" />
                         <TextField
                            onBlur={handleOnBlur}
-                           sx={{ width: 1, mx: 'auto' }}
+                           sx={{ width: 1, mx: 'auto', marginBottom: '18px' }}
                            id='filled-basic'
                            name='password'
                            type='password'
@@ -96,8 +95,9 @@ const LogIn = () => {
                            variant="filled" />
 
                         <Button
-                           sx={{ width: 1, mx: 'auto' }}
+                           sx={{ width: 1, mx: 'auto', marginBottom: '18px' }}
                            variant='contained'
+                           style={{ backgroundColor: '#f57f17' }}
                            type='submit'
                         >Log In</Button>
                      </form>
@@ -105,10 +105,10 @@ const LogIn = () => {
                <p>New Here..?? <Link to='/register' className='text-decoration-none' variant='text'>Create An Account</Link> </p>
                <Button
                   className='my-3'
-                  variant='contained'
+                  variant='outlined'
                   onClick={handleGoogle}>
                   <img width='22px' src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.svg.png' alt="" />
-                  <span className=''> Log in with Google</span>
+                  <span className=''>Log in with Google</span>
                </Button>
                {
                   user?.email && <Alert

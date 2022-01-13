@@ -21,3 +21,43 @@ transition: .6s;
 .single:hover{
    background-color: #f57f1738;
 }
+.deshboard-menu {
+   padding: 0;
+   list-style: none;
+}
+.deshboard-menu li a {
+   text-decoration: none;
+   color: black;
+   padding: 5px 0;
+   display: block;
+}
+.deshboard-menu li button {
+   text-decoration: none;
+   color: black !important;
+   padding: 5px 0;
+   display: block;
+   width: 100%;
+   text-align: left;
+   background: none;
+   border: none;
+}
+.deshboard-menu li button:hover {
+   background: none;
+}
+.deshboard-menu li button:focus {
+   outline: 0 !important;
+   box-shadow: 0 0 0 0 #fff !important;
+   background: none !important;
+   border: none !important;
+}
+.product-style {
+   box-shadow: inset 0px 0px 20px 0px rgb(9 8 8 / 15%);
+   border-radius: 8px;
+   overflow: hidden;
+}
+.down-menu .btn-primary{
+background-color: blueviolet;
+}
+.input-style .css-10botns-MuiInputBase-input-MuiFilledInput-input{
+   background: #fff;
+}

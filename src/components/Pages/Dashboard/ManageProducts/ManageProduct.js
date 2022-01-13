@@ -20,13 +20,13 @@ const ManageProduct = ({ bike, setLoading }) => {
          })
    }
    return (
-      <div className='w-75 mx-auto'>
-         <div className='row row-cols-lg-3 row-cols-1 m-0 py-3 card-style'>
+      <div className='mx-auto'>
+         <div className='row row-cols-lg-3 row-cols-1 m-0 py-3 product-style mb-2'>
             <div>
-               <img height='150px' width='300px' src={img} alt="" />
+               <img height='80px' width='120px' src={img} alt="" />
             </div>
             <div>
-               <h1>{bikeName}</h1>
+               <h2>{bikeName}</h2>
                <h4>Cost: {price}</h4>
             </div>
             <div>

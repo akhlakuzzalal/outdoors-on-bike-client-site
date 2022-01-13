@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
 import SingleBike from './SingleBike/SingleBike';
 import Footer from '../../Footer/Footer';
-import Header from '../../Header/Header';
 import useAuth from '../../../hooks/useAuth';
 
 const AllProducts = () => {
@@ -16,7 +15,6 @@ const AllProducts = () => {
    }, [])
    return (
       <div className='mt-4'>
-         <Header></Header>
          <h2 style={{ color: '#f57f17' }}>All Bikes</h2>
          <Grid container spacing={2}>
             {

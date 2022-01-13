@@ -45,7 +45,7 @@ const MyOrders = () => {
 
    return (
       <div>
-         <h3 className='bg-info py-2'>My Orders</h3>
+         <h3 style={{ color: '#f57f17' }} className='py-2'>My Orders</h3>
          <TableContainer className='review-style mx-auto' sx={{ width: { md: '80%', xs: '450px' } }} component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
                <TableHead>
@@ -81,11 +81,10 @@ const MyOrders = () => {
                                           {
                                              row.payment ?
                                                 <>
-                                                   <button className='btn btn-info' disabled>Paid</button>
-                                                   <button className='btn btn-warning'>Track Order</button>
+                                                   <button style={{ backgroundColor: '#f57f17' }} className='btn' disabled>Paid</button>
                                                 </>
                                                 :
-                                                <Link className='btn btn-info' to={`/dashboard/pay/${row._id}`}>Pay Now</Link>
+                                                <Link style={{ backgroundColor: '#f57f17' }} className='btn' to={`pay/${row._id}`}>Pay Now</Link>
                                           }
                                        </>
                                        :

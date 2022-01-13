@@ -44,8 +44,8 @@ const Review = () => {
             loading ?
                <LinearProgress />
                :
-               <div className='w-75 mx-auto bg-shadow p-4'>
-                  <h3>Rate and Review Our Page</h3>
+               <div className='mx-auto p-4 text-start'>
+                  <h3 style={{ color: '#f57f17' }} className='text-center pb-2'>Rate and Review Our Page</h3>
                   <div>
                      <div className='d-flex align-items-center'>
                         <Avatar sx={{ width: 32, height: 32 }}> <img className='img-fluid' src={profile.img} alt="" /> </Avatar>
@@ -73,9 +73,10 @@ const Review = () => {
                   </div>
                   <Button
                      className='mt-2'
+                     style={{ backgroundColor: '#f57f17' }}
                      variant='contained'
                      onClick={handleSubmit}
-                  >SUbmit</Button>
+                  >Submit</Button>
                </div>
          }
       </div>

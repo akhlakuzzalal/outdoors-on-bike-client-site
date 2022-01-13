@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Alert, AlertTitle, Button, LinearProgress, TextField } from '@mui/material';
 import { Link } from 'react-router-dom';
-import Footer from '../../Footer/Footer'
-import Header from '../../Header/Header'
+import Footer from '../../Footer/Footer';
 import useAuth from '../../../hooks/useAuth';
 
 const Register = () => {
@@ -68,7 +67,6 @@ const Register = () => {
 
    return (
       <div>
-         <Header></Header>
          <h2>Register A New Account</h2>
          <img height='80px' width='200px' src={'https://img.freepik.com/free-vector/register-now-banner-ribbon-banner-modern-promotion-template-sale-website-banner_194782-60.jpg?size=626&ext=jpg'} alt="" />
          {

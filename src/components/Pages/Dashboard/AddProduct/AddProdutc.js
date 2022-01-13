@@ -53,7 +53,7 @@ const AddProdutc = () => {
                         <form onSubmit={handleSubmit}>
                            <TextField
                               onBlur={handleOnBlur}
-                              sx={{ width: '50%', m: 1 }}
+                              sx={{ width: '75%', m: 1 }}
                               id='satandard-basic'
                               name='bikeName'
                               label="Bike Name"
@@ -61,28 +61,28 @@ const AddProdutc = () => {
                               variant="standard" />
                            <TextField
                               onBlur={handleOnBlur}
-                              sx={{ width: '50%', m: 1 }}
+                              sx={{ width: '75%', m: 1 }}
                               id='satandard-basic'
                               name='price'
                               label="Price"
                               variant="standard" />
                            <TextField
                               onBlur={handleOnBlur}
-                              sx={{ width: '50%', m: 1 }}
+                              sx={{ width: '75%', m: 1 }}
                               id='satandard-basic'
                               name='img'
                               type='url'
                               label="Photo Url"
                               variant="standard" />
                            <Button
-                              sx={{ width: '50%', m: 1 }}
+                              sx={{ width: '75%', m: 1, backgroundColor: '#f57f17' }}
                               variant='contained'
                               type='submit'
                            >Add Your Bike</Button>
                         </form>
                         {
                            bike && <Alert
-                              sx={{ width: '50%', mx: 'auto' }}
+                              sx={{ width: '75%', mx: 'auto' }}
                               severity="success"
                            >
                               <AlertTitle>Success</AlertTitle>
