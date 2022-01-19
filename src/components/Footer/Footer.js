@@ -26,7 +26,7 @@ const Footer = () => {
                      <img width='200px' src={playstore} alt="" />
                   </div>
                </div>
-               <div className='m-3 row'>
+               <div className='row'>
                   <div className="col">
                      <p>@All right reseved Outdoors on Bike</p>
                   </div>

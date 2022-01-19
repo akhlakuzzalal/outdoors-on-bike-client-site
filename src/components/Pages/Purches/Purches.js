@@ -63,6 +63,7 @@ const Purches = () => {
                                     <h3 className='bg-success text-light w-75 p-4 mx-auto'>Order send Successfully</h3>
                                     <div className='my-5 py-5'>
                                        <Link to='/home' style={{ backgroundColor: '#f57f17' }} className='text-decoration-none btn text-light'>Go To The Home Page</Link>
+                                       <Link to='/dashboard' style={{ backgroundColor: '#f57f17' }} className='ms-3 text-decoration-none btn text-light'>Go To Dashboard</Link>
                                     </div>
                                  </div>
                                  :

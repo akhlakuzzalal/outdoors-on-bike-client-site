@@ -10,6 +10,7 @@ const Pay = () => {
          .then(res => res.json())
          .then(data => setOrders(data[0]))
    }, [id])
+   // console.log(order)
    return (
       <div>
          <h2 style={{ color: '#f57f17' }}>{order?.name}</h2>

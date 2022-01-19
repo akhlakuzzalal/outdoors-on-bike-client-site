@@ -29,7 +29,8 @@ function App() {
             <Route exact path='allproducts' element={<AllProducts />}></Route>
             <Route exact path='dashBoard' element={<PrivateRoute><DashBoard /></PrivateRoute>}>
               <Route path='pay/:id' element={<Pay />}></Route>
-              <Route path='myorder' element={<MyOrders />}></Route>
+              <Route path='myorder' element={<MyOrders />}>
+              </Route>
               <Route path='' element={<MyOrders />}></Route>
               <Route path='review' element={<Review />}></Route>
               <Route path='manageallorders' element={<ManageAllOrders />}></Route>
@@ -39,7 +40,7 @@ function App() {
             </Route>
             <Route exact path='login' element={<LogIn />}></Route>
             <Route exact path='register' element={<Register />}></Route>
-            <Route exact path='purches' element={<Purches />}></Route>
+            <Route exact path='purches' element={<PrivateRoute><Purches /></PrivateRoute>}></Route>
           </Routes>
         </BrowserRouter>
       </AuthProvider>
