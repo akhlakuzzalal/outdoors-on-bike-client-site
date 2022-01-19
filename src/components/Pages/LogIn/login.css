@@ -61,3 +61,19 @@ background-color: blueviolet;
 .input-style .css-10botns-MuiInputBase-input-MuiFilledInput-input{
    background: #fff;
 }
+.review-style{
+   box-shadow: inset 0 0 14px rgb(63 63 63 / 37%);
+   border-radius: 8px;
+   overflow: hidden;
+}
+.more-btn {
+   background-color: #fff;
+   border: none;
+   color: darkgreen;
+}
+.styles-module_carousel-arrow__26sRw{
+   z-index: 1;
+   height: 100%;
+   border: none;
+   background-color: #fff;
+}
