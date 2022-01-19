@@ -30,6 +30,7 @@ function App() {
             <Route exact path='dashBoard' element={<PrivateRoute><DashBoard /></PrivateRoute>}>
               <Route path='pay/:id' element={<Pay />}></Route>
               <Route path='myorder' element={<MyOrders />}>
+                <Route path='pay/:id' element={<Pay />}></Route>
               </Route>
               <Route path='' element={<MyOrders />}></Route>
               <Route path='review' element={<Review />}></Route>
