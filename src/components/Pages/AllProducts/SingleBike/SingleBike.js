@@ -18,7 +18,7 @@ const SingleBike = ({ bike }) => {
       <div className='mt-4'>
          <div className='col card-style py-3'>
             <div>
-               <img height='200px' width='300px' src={img} alt="" />
+               <img height='200px' width='250px' src={img} alt="" />
             </div>
             <div>
                <h3 style={{ color: '#f57f17' }}>{bikeName}</h3>

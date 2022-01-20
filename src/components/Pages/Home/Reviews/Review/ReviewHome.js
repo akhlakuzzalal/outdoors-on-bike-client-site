@@ -1,4 +1,4 @@
-import { Rating } from '@mui/material';
+import { Container, Rating } from '@mui/material';
 import React from 'react';
 import { useState } from 'react';
 
@@ -17,7 +17,7 @@ const ReviewHome = ({ review }) => {
       }
    }
    return (
-      <div className="review-style mx-1 my-2" style={{ minHeight: '350px' }}>
+      <Container className="review-style mx-1 my-2" sx={{ minHeight: '350px', marginRight: '20px' }}>
          <div class="d-flex justify-content-center pt-5">
             <img class="w-25 border rounded-circle card-img-top"
                src={img}
@@ -40,7 +40,7 @@ const ReviewHome = ({ review }) => {
             <Rating name="read-only" value={rate} readOnly />
             <p class="text-primary">{name}</p>
          </div>
-      </div>
+      </Container >
    );
 };
 

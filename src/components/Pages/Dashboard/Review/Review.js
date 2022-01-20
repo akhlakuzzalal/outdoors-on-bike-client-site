@@ -1,4 +1,4 @@
-import { Avatar, Rating, TextField, Button, LinearProgress } from '@mui/material';
+import { Avatar, Rating, TextField, Button, LinearProgress, Alert, AlertTitle } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../../../hooks/useAuth';
 
@@ -6,6 +6,7 @@ const Review = () => {
    const [profile, setProfile] = useState({});
    const [rate, setRate] = useState(0);
    const [rateText, setRateText] = useState('');
+   const [alertText, setAlert] = useState(false);
    const [loading, setLoading] = useState(false);
    const { user } = useAuth()
 
@@ -34,10 +35,16 @@ const Review = () => {
       })
          .then(res => res.json())
          .then(data => {
-            console.log(data)
+            if (data.insertedId) {
+               setAlert(true)
+            }
             setLoading(false)
          })
    }
+
+   setTimeout(() => {
+      setAlert(false)
+   }, 10000)
    return (
       <div>
          {
@@ -79,6 +86,13 @@ const Review = () => {
                   >Submit</Button>
                </div>
          }
+         {alertText && <Alert
+            sx={{ width: '50%', mx: 'auto', position: 'absolute' }}
+            severity="success"
+         >
+            <AlertTitle>Success</AlertTitle>
+            Thank you for your <strong>FeedBack !</strong>
+         </Alert>}
       </div>
    );
 };

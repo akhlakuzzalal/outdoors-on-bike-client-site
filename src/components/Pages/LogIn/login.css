@@ -77,3 +77,42 @@ background-color: blueviolet;
    border: none;
    background-color: #fff;
 }
+.styles-module_item-container__a8zaY{
+   margin-left: 12px;
+}
+@media only screen and (max-width: 600px){
+   .MuiContainer-root{
+      width: 300px!important;
+   }
+   .styles-module_item-container__a8zaY{
+      width: 300px !important;
+   }
+   .review-carosel element.style {
+      width: 640px;
+      transition: transform 0s ease 0s;
+  }
+  .styles-module_item-tracker__3bypy{
+      transform: translateX(-10px) !important;
+  }
+  .navbar-nav-scroll {
+   max-height: var(--bs-scroll-height,75vh);
+   overflow-y: none;
+   }
+   #login{
+      margin: 10px 15px;
+   }
+   #purches{
+      margin: 0 10px;
+   }
+   #dashboard{
+      padding: 0 10px !important;
+      display: flex;
+      flex-direction: column;
+   }
+   #dash-menu{
+      width: 100%;
+   }
+   #dash-item{
+      width: 100%;
+   }
+}

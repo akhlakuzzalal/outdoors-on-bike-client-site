@@ -23,7 +23,7 @@ const MyOrders = () => {
             setOrder(data);
             setLoading(false)
          })
-   }, [loading]);
+   }, [loading, email]);
 
    const handleModal = (id) => {
       setShow(false);
@@ -84,7 +84,12 @@ const MyOrders = () => {
                                                    <button style={{ backgroundColor: '#f57f17' }} className='btn' disabled>Paid</button>
                                                 </>
                                                 :
-                                                <Link style={{ backgroundColor: '#f57f17' }} className='btn' to={`pay/${row._id}`}>Pay Now</Link>
+                                                <Link
+                                                   style={{ backgroundColor: '#f57f17' }}
+                                                   className='btn'
+                                                   to={`pay/${row._id}`}>
+                                                   Pay Now
+                                                </Link>
                                           }
                                        </>
                                        :

@@ -51,7 +51,7 @@ const Purches = () => {
          <h2 style={{ color: '#f57f17' }} className='py-2'>Confirm Your Order</h2>
          {
             bike?.img ?
-               <div className='mt-4'>
+               <div className='mt-4' id='purches'>
                   {
                      load ?
                         <LinearProgress />

@@ -46,6 +46,9 @@ const CheckoutForm = ({ _id, price }) => {
    const handleSubmit = async (e) => {
       e.preventDefault();
 
+      if (message) {
+
+      }
       if (!stripe || !elements) {
          return;
       }
@@ -56,22 +59,11 @@ const CheckoutForm = ({ _id, price }) => {
          elements,
          confirmParams: {
             // Make sure to change this to your payment completion page
-            return_url: "http://localhost:3000/dashBoard",
+            return_url: `http://localhost:3000/confirmOrder/${_id}`,
          },
-      },
-         fetch(`https://bike-website-server.herokuapp.com/payment/${_id}`, {
-            method: "PUT",
-            headers: {
-               "content-type": "application/json"
-            },
-            body: JSON.stringify({ price })
-         })
-            .then(res => res.json())
-            .then(data => console.log(data))
-      );
+      })
 
-
-      console.log(error);
+      console.log(message);
       if (error.type === "card_error" || error.type === "validation_error") {
          setMessage(error.message);
       } else {

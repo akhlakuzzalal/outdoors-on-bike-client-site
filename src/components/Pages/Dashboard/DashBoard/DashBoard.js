@@ -18,8 +18,8 @@ const DashBoard = () => {
    return (
       <div>
          <div className="container">
-            <div style={{ padding: '80px 0' }} className="row">
-               <div className="col-md-3 col-2">
+            <div id='dashboard' style={{ padding: '80px 0' }} className="row">
+               <div id='dash-menu' className="col-md-3 col-2">
                   <div className="left-menu text-start">
                      <ul className="deshboard-menu">
                         {account?.role === 'admin' && (
@@ -69,7 +69,7 @@ const DashBoard = () => {
                      </ul>
                   </div>
                </div>
-               <div className="col-md-9 col-10">
+               <div id='dash-item' className="col-md-9 col-10">
                   <Outlet />
                </div>
             </div>

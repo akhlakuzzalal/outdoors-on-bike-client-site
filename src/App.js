@@ -16,6 +16,7 @@ import AddProdutc from './components/Pages/Dashboard/AddProduct/AddProdutc';
 import MakeAdmin from './components/Pages/Dashboard/MakeAdmin/MakeAdmin';
 import ManageProducts from './components/Pages/Dashboard/ManageProducts/ManageProducts';
 import Header from './components/Header/Header';
+import ConfirmOrder from './components/Pages/ConfirmOrder/ConfirmOrder';
 
 function App() {
   return (
@@ -29,9 +30,8 @@ function App() {
             <Route exact path='allproducts' element={<AllProducts />}></Route>
             <Route exact path='dashBoard' element={<PrivateRoute><DashBoard /></PrivateRoute>}>
               <Route path='pay/:id' element={<Pay />}></Route>
-              <Route path='myorder' element={<MyOrders />}>
-                <Route path='pay/:id' element={<Pay />}></Route>
-              </Route>
+              <Route path='myorder/pay/:id' element={<Pay />}></Route>
+              <Route path='myorder' element={<MyOrders />}></Route>
               <Route path='' element={<MyOrders />}></Route>
               <Route path='review' element={<Review />}></Route>
               <Route path='manageallorders' element={<ManageAllOrders />}></Route>
@@ -42,6 +42,7 @@ function App() {
             <Route exact path='login' element={<LogIn />}></Route>
             <Route exact path='register' element={<Register />}></Route>
             <Route exact path='purches' element={<PrivateRoute><Purches /></PrivateRoute>}></Route>
+            <Route exact path='confirmOrder/:id' element={<PrivateRoute><ConfirmOrder /></PrivateRoute>}></Route>
           </Routes>
         </BrowserRouter>
       </AuthProvider>

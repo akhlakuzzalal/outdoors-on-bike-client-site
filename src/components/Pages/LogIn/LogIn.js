@@ -70,7 +70,7 @@ const LogIn = () => {
    return (
       <div>
          <div className='py-5 input-style'>
-            <div className='p-4 w-50 mx-auto card-style' >
+            <div id='login' className='p-4 w-50 mx-auto card-style' >
                <h2 style={{ color: '#f57f17' }} className='py-3'>LogIn</h2>
                {
                   loading ?
@@ -117,7 +117,7 @@ const LogIn = () => {
                   >
                      <AlertTitle>Success</AlertTitle>
                      User Logged in <strong>Successfully!</strong>
-                  </Alert>
+                  </Alert> && nevigate(ridirect_url)
                }
             </div>
          </div>
